@@ -8,7 +8,13 @@ dotenv.config();
 const app = express();
 const port = 5000;
 
-app.use(cors());
+app.use(cors({
+    origin: [
+        'http://localhost:5173',
+        'https://ampte.github.io/garo2_frontend_gemini_powered/'
+    ]
+}));
+
 app.use(express.json());
 
 const ai = new GoogleGenAI({
