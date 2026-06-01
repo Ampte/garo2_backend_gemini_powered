@@ -10,9 +10,11 @@ const port = 5000;
 
 app.use(cors({
     origin: [
-        'http://localhost:5173',
-        'https://ampte.github.io/garo2_frontend_gemini_powered/'
-    ]
+        'https://ampte.github.io',
+        'http://localhost:5173'
+    ],
+    methods: ['GET', 'POST'],
+    credentials: true
 }));
 
 app.use(express.json());
